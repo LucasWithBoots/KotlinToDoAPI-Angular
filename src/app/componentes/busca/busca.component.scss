@@ -8,12 +8,14 @@
   border-radius: 6px;
   background: #222;
 
-  p {
+  input {
+    all: unset;
     color: rgba(255, 255, 255, 0.33);
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    width: 90%;
   }
 }
