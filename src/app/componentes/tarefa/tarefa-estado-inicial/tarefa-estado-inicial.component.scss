@@ -1,0 +1,43 @@
+.frame-tarefa {
+  display: flex;
+  width: 487.683px;
+  padding: 17.305px 22.024px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+
+  border-radius: 9.439px;
+  background: #1D1D1D;
+
+  .caixa-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6.293px;
+
+    h1 {
+      color: #FFF;
+      font-family: Roboto, sans-serif;
+      font-size: 24.777px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    h2 {
+      color: #FFF;
+      font-family: Roboto, sans-serif;
+      font-size: 14.413px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .caixa-icons {
+    display: flex;
+    align-items: center;
+    gap: 7.866px;
+  }
+}
