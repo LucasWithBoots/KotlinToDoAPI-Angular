@@ -1,16 +1,23 @@
 <section class="criar-tarefa">
   <h1>Criar</h1>
-  <div class="campo-criacao">
+  <form (ngSubmit)="onSubmit()" class="campo-criacao">
     <input
+      [(ngModel)]="tarefa.titulo"
       class="titulo"
-      placeholder="Título"
+      id="titulo"
+      name="titulo"
+      placeholder="Título" required
     />
     <textarea
+      [(ngModel)]="tarefa.descricao"
       class="descricao"
-      placeholder="Descrição"
+      id="descricao"
+      name="descricao"
+      placeholder="Título" required
     ></textarea>
-  </div>
-  <button class="botao-adicionar">
-    <img alt="+" src="../../../assets/plus.svg"/>
-  </button>
+
+    <button class="botao-adicionar" type="submit">
+      <img alt="+" src="../../../assets/plus.svg"/>
+    </button>
+  </form>
 </section>
