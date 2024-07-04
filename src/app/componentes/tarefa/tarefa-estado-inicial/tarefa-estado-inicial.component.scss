@@ -44,5 +44,9 @@
     display: flex;
     align-items: center;
     gap: 7.866px;
+
+    svg {
+      cursor: pointer;
+    }
   }
 }

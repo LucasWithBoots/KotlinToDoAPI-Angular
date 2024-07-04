@@ -33,5 +33,21 @@ export class TarefaEstadoInicialComponent implements OnInit {
     );
   }
 
+  public deletarTarefa(id: number | undefined) {
+    this.http.delete(`http://localhost:8080/tarefa/${id}`).subscribe(() => {
+      console.log(`Tarefa com id ${id} deletada com sucesso`);
+    })
+  }
 
+
+  public marcarConcluida(id: number | undefined) {
+    const body = {
+      id: id,
+      status: "CONCLUIDA"
+    }
+
+    this.http.put("http://localhost:8080/tarefa/status", body).subscribe(() => {
+      console.log(`Tarefa com id ${id} marcada como concluída`);
+    })
+  }
 }
