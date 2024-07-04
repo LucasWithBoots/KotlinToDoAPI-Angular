@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {TarefaEstadoInicialComponent} from "./componentes/tarefa/tarefa-estado-inicial/tarefa-estado-inicial.component";
@@ -22,4 +22,11 @@ import {SaudacaoTopoComponent} from "./componentes/saudacao-topo/saudacao-topo.c
 })
 export class AppComponent {
   title = 'KotlinToDoAPI-Angular';
+
+  @ViewChild('tarefaInicial') tarefaInicial: TarefaEstadoInicialComponent | undefined;
+
+  onTarefaCriada() {
+    // @ts-ignore
+    this.tarefaInicial.fetchDetails();
+  }
 }

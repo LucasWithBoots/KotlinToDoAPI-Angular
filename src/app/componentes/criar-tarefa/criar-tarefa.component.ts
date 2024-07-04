@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {TarefaDTO} from "../../interfaces/tarefaDTO.interface";
@@ -13,6 +13,7 @@ import {TarefaDTO} from "../../interfaces/tarefaDTO.interface";
   styleUrl: './criar-tarefa.component.scss'
 })
 export class CriarTarefaComponent {
+  @Output() tarefaCriada = new EventEmitter<void>();
 
   tarefa: TarefaDTO = {
     idUsuario: 2,
@@ -26,8 +27,9 @@ export class CriarTarefaComponent {
   onSubmit() {
     this.http.post("http://localhost:8080/tarefa", this.tarefa)
       .subscribe(response => {
-        console.log(response);
+        console.log(response)
         this.resetForm()
+        this.tarefaCriada.emit()
       })
   }
 

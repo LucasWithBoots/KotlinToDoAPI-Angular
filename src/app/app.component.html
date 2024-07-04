@@ -4,12 +4,12 @@
 
 <app-containers-menu>
   <app-busca></app-busca>
-  <app-criar-tarefa></app-criar-tarefa>
+  <app-criar-tarefa (tarefaCriada)="onTarefaCriada()"></app-criar-tarefa>
 </app-containers-menu>
 
 <div class="container">
   <app-containers-tarefa-estado-inicial>
-    <app-tarefa-estado-inicial>
+    <app-tarefa-estado-inicial #tarefaInicial>
     </app-tarefa-estado-inicial>
   </app-containers-tarefa-estado-inicial>
 
