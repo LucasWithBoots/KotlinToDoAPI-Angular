@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {Tarefa} from "../../../tarefa.interface";
+import {Tarefa} from "../../../interfaces/tarefa.interface";
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -25,7 +25,7 @@ export class TarefaEstadoInicialComponent implements OnInit {
   public fetchDetails() {
     this.http.get<Tarefa[]>("http://localhost:8080/tarefa").subscribe(
       (res: Tarefa[]) => {
-        this.tarefas = res;
+        this.tarefas = res.filter(tarefa => tarefa.status === "PENDENTE")
       },
       (err) => {
         console.error('Erro ao buscar tarefas', err);

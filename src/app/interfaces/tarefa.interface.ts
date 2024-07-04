@@ -1,7 +1,7 @@
 export interface Tarefa {
-  id: number,
+  id?: number,
   titulo: string,
   descricao: string,
-  dataDeCriacao: string
-  status: string
+  dataDeCriacao?: string
+  status?: string
 }
