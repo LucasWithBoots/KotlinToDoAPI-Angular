@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-criar-tarefa',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './criar-tarefa.component.html',
   styleUrl: './criar-tarefa.component.scss',
 })
-export class CriarTarefaComponent {}
+export class CriarTarefaComponent {
+  enteredTask: string = 'Escreva aqui...';
+
+}
