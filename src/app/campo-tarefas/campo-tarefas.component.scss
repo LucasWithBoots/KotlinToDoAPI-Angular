@@ -1,36 +1,32 @@
-.barra-inferior{
+.barra-inferior {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   color: rgba(255, 255, 255, 0.5);
 
-
-  p, menu{
-    all:unset
+  p,
+  menu {
+    all: unset;
   }
 
-  menu{
+  menu {
     display: flex;
-    gap: .7rem;
+    gap: 0.7rem;
 
-
-    p{
+    p {
       cursor: pointer;
       transition: color 0.3s ease;
-      &:hover{
+      &:hover {
         color: rgba(255, 255, 255, 1);
       }
     }
   }
 
-  .remover-completas{
+  .remover-completas {
     cursor: pointer;
     transition: color 0.3s ease;
-    &:hover{
+    &:hover {
       color: rgba(255, 255, 255, 1);
     }
-
   }
 }
-
-
