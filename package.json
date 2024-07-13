@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettier": "npx prettier . --write",
-    "json-serve":"npx json-server db.json"
+    "json-serve": "npx json-server db.json"
   },
   "private": true,
   "dependencies": {

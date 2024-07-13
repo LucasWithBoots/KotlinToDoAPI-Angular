@@ -1,7 +1,11 @@
 <section class="box-padrao-conteudo">
-  @if(tarefas){
-    @for(tarefa of tarefas; track tarefa.id){
-      <app-tarefa (marcarStatus)="atualizar()" (deletaTarefa)="atualizar()" [tarefa]="tarefa"></app-tarefa>
+  @if (tarefas) {
+    @for (tarefa of tarefas; track tarefa.id) {
+      <app-tarefa
+        (marcarStatus)="atualizar()"
+        (deletaTarefa)="atualizar()"
+        [tarefa]="tarefa"
+      ></app-tarefa>
     }
   } @else {
     <p>Não há tarefas!</p>

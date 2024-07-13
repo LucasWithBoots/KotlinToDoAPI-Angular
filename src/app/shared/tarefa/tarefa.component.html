@@ -1,8 +1,8 @@
 <div class="container">
-  @if(tarefa.status == "CONCLUIDA"){
+  @if (tarefa.status == "CONCLUIDA") {
     <div class="elipse-cheia" (click)="atualizarStatus(tarefa)"></div>
-  } @else if(tarefa.status == "PENDENTE"){
-    <div class="elipse" (click)="atualizarStatus(tarefa)" ></div>
+  } @else if (tarefa.status == "PENDENTE") {
+    <div class="elipse" (click)="atualizarStatus(tarefa)"></div>
   }
 
   <p>{{ tarefa.titulo }}</p>
