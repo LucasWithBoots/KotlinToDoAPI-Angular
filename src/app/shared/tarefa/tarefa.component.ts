@@ -8,5 +8,5 @@ import { Component, Input } from "@angular/core";
   styleUrl: './tarefa.component.scss',
 })
 export class TarefaComponent {
-  @Input({required: true}) descricao!: string;
+  @Input({required: true}) titulo!: string;
 }

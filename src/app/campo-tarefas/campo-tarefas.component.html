@@ -1,7 +1,12 @@
 <section class="box-padrao-conteudo">
-  @for(tarefa of tarefas; track tarefa.id){
-    <app-tarefa [descricao]="tarefa.descricao"></app-tarefa>
+  @if(tarefas){
+    @for(tarefa of tarefas; track tarefa.id){
+      <app-tarefa [titulo]="tarefa.titulo"></app-tarefa>
+    }
+  } @else {
+    <p>Não há tarefas!</p>
   }
+
   <div class="barra-inferior">
     <p>4 tarefas restantes</p>
     <menu>

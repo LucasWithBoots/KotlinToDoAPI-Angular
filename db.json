@@ -1,0 +1,10 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Finalizar relatório de vendas",
+      "dataDeCriacao": "2024-07-01T09:00:00",
+      "status": "PENDENTE"
+    }
+  ]
+}

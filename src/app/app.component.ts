@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
@@ -18,4 +18,10 @@ import { CampoTarefasComponent } from "./campo-tarefas/campo-tarefas.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  @ViewChild(CampoTarefasComponent) campoTarefas! : any
+
+  resgatarTarefas() {
+    this.campoTarefas.ngOnInit()
+  }
+}

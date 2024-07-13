@@ -1,5 +1,7 @@
 export interface Tarefa {
-  titulo: string,
-  descricao:string
+  id: string
+  titulo: string
+  dataDeCriacao: string
+  status: string
 }
 
