@@ -15,6 +15,12 @@
     cursor: pointer;
   }
 
+  .elipse-cheia{
+    @extend .elipse;
+
+    background-color: white;
+  }
+
   img {
     margin: auto;
 
