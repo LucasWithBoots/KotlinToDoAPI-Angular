@@ -1,9 +1,9 @@
 <section class="box-padrao-conteudo campo-criar-tarefa">
-  <textarea
-    rows="1"
+  <input
     [(ngModel)]="enteredTask"
     id="enteredTask"
     name="enteredTask"
-  ></textarea>
+    (keyup.enter)="onSubmit()"
+  />
   <img (click)="onSubmit()" src="assets/arrow_left.svg" alt="enter" />
 </section>
