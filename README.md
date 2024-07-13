@@ -2,7 +2,7 @@
 
 Esse é o front-end da aplicação [KotlinToDoAPI](https://github.com/LucasWithBoots/KotlinToDoAPI). Ambos em desenvolvimento
 
-![Skills Usadas](https://skillicons.dev/icons?i=angular,typescript,sass)
+![Skills Usadas](https://skillicons.dev/icons?i=angular,typescript,sass,idea)
 
 ![gif do projeto](./src/assets/animacao_funcionando.gif)
 
