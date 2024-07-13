@@ -38,3 +38,6 @@ npm run serve
 
 - Foto de <a href="https://unsplash.com/pt-br/@kirrender?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kir</a> na <a href="https://unsplash.com/pt-br/fotografias/uma-foto-em-preto-e-branco-de-algumas-rochas-ufod2uFjkTI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - Ícones e fontes do [Google Fonts](https://fonts.google.com)
+
+# License
+This project is licensed under the WTFPL, allowing you to redistribute and modify the work under any terms of your choice. You are not required to use the same license for your modifications.
