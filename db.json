@@ -5,24 +5,6 @@
       "titulo": "Finalizar relatório de vendas",
       "dataDeCriacao": "Sat Jul 13 2024",
       "status": "PENDENTE"
-    },
-    {
-      "id": "8023",
-      "titulo": "Reunião com equipe de marketing",
-      "dataDeCriacao": "Sat Jul 13 2024",
-      "status": "CONCLUIDA"
-    },
-    {
-      "id": "f084",
-      "titulo": "Atualizar site da empresa",
-      "dataDeCriacao": "Sat Jul 13 2024",
-      "status": "CONCLUIDA"
-    },
-    {
-      "id": "0fb6",
-      "titulo": "Revisar contrato",
-      "dataDeCriacao": "Sat Jul 13 2024",
-      "status": "PENDENTE"
     }
   ]
 }
