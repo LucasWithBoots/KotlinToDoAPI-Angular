@@ -1,0 +1,12 @@
+h1 {
+  font-weight: normal;
+  letter-spacing: 17px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    text-wrap: wrap;
+    word-wrap: break-word;
+  }
+}

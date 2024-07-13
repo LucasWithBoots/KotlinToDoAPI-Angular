@@ -1,6 +1,22 @@
-.container {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Preenche até metade da página */
+  background: url("../assets/background-top.jpg");
+  background-size: cover;
+  z-index: -1; /* Coloca a imagem atrás de outros elementos */
+}
+
+.conteudo-util {
+  padding-top: 2rem;
+  width: 60%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .conteudo-util {
+    width: 100%;
+  }
 }

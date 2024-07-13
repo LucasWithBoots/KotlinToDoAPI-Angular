@@ -1,0 +1,22 @@
+.campo-criar-tarefa {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  all: unset;
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+img {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .campo-criar-tarefa {
+    margin-bottom: 1rem;
+  }
+}

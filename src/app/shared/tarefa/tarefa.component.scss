@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  gap: 1em;
+
+  .elipse {
+    background-color: transparent;
+    box-sizing: border-box;
+    border: white solid 0.15rem;
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: 50%;
+    margin: auto;
+
+    cursor: pointer;
+  }
+
+  .elipse-cheia {
+    @extend .elipse;
+
+    background-color: white;
+  }
+
+  img {
+    margin: auto;
+
+    cursor: pointer;
+  }
+}

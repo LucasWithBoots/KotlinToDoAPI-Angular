@@ -1,19 +1,7 @@
-<app-saudacao-topo>
+<div class="background-image"></div>
 
-</app-saudacao-topo>
-
-<app-containers-menu>
-  <app-busca></app-busca>
-  <app-criar-tarefa (tarefaCriada)="onTarefaCriada()"></app-criar-tarefa>
-</app-containers-menu>
-
-<div class="container">
-  <app-containers-tarefa-estado-inicial>
-    <app-tarefa-estado-inicial #tarefaInicial>
-    </app-tarefa-estado-inicial>
-  </app-containers-tarefa-estado-inicial>
-
-
-  <app-tarefa-estado-finalizado>
-  </app-tarefa-estado-finalizado>
-</div>
+<section class="conteudo-util">
+  <app-header />
+  <app-criar-tarefa (postCompleto)="resgatarTarefas()"></app-criar-tarefa>
+  <app-campo-tarefas></app-campo-tarefas>
+</section>
