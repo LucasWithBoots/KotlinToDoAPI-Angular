@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { TarefaService } from '../shared/tarefa/tarefa.service';
+import { Component, EventEmitter, Output } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { TarefaService } from "../shared/tarefa/tarefa.service";
 
 @Component({
-  selector: 'app-criar-tarefa',
+  selector: "app-criar-tarefa",
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './criar-tarefa.component.html',
-  styleUrl: './criar-tarefa.component.scss',
+  templateUrl: "./criar-tarefa.component.html",
+  styleUrl: "./criar-tarefa.component.scss",
 })
 export class CriarTarefaComponent {
-  enteredTask: string = 'Escreva aqui...';
+  enteredTask: string = "Escreva aqui...";
   @Output() postCompleto = new EventEmitter();
 
   constructor(private tarefaService: TarefaService) {}
@@ -20,11 +20,11 @@ export class CriarTarefaComponent {
       .enviarTarefa({
         titulo: this.enteredTask,
         dataDeCriacao: new Date().toDateString(),
-        status: 'PENDENTE',
+        status: "PENDENTE",
       })
       .subscribe(() => {
         this.postCompleto.emit();
-        this.enteredTask = '';
+        this.enteredTask = "";
       });
   }
 }

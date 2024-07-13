@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TarefaService } from './tarefa.service';
-import { Tarefa } from './tarefa.model';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { TarefaService } from "./tarefa.service";
+import { Tarefa } from "./tarefa.model";
 
 @Component({
-  selector: 'app-tarefa',
+  selector: "app-tarefa",
   standalone: true,
   imports: [],
-  templateUrl: './tarefa.component.html',
-  styleUrl: './tarefa.component.scss',
+  templateUrl: "./tarefa.component.html",
+  styleUrl: "./tarefa.component.scss",
 })
 export class TarefaComponent {
   @Input() tarefa!: Tarefa;
