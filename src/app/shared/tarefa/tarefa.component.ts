@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { TarefaService } from "./tarefa.service";
-import { Tarefa } from "./tarefa.model";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TarefaService } from './tarefa.service';
+import { Tarefa } from './tarefa.model';
 
 @Component({
   selector: 'app-tarefa',
@@ -27,5 +27,4 @@ export class TarefaComponent {
       this.deletaTarefa.emit();
     });
   }
-
 }

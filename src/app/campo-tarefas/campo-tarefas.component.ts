@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { TarefaComponent } from "../shared/tarefa/tarefa.component";
-import { TarefaService } from "../shared/tarefa/tarefa.service";
-import { Tarefa } from "../shared/tarefa/tarefa.model";
+import { Component, OnInit } from '@angular/core';
+import { TarefaComponent } from '../shared/tarefa/tarefa.component';
+import { TarefaService } from '../shared/tarefa/tarefa.service';
+import { Tarefa } from '../shared/tarefa/tarefa.model';
 
 @Component({
   selector: 'app-campo-tarefas',
@@ -17,7 +17,7 @@ export class CampoTarefasComponent implements OnInit {
   tarefasPendentes: number = 0;
 
   ngOnInit() {
-    this.resgatarTarefas()
+    this.resgatarTarefas();
   }
 
   contarTarefasRestantes() {
@@ -33,10 +33,9 @@ export class CampoTarefasComponent implements OnInit {
     });
   }
 
-  removerTarefasProntas(){
-    this.tarefaService.apagarTarefasCompletas().subscribe((res)=>{
-      this.resgatarTarefas()
-    })
+  removerTarefasProntas() {
+    this.tarefaService.apagarTarefasCompletas().subscribe(() => {
+      this.resgatarTarefas();
+    });
   }
-
 }
