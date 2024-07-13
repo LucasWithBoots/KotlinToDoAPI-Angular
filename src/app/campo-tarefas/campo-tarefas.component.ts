@@ -33,5 +33,10 @@ export class CampoTarefasComponent implements OnInit {
     });
   }
 
+  removerTarefasProntas(){
+    this.tarefaService.apagarTarefasCompletas().subscribe((res)=>{
+      this.resgatarTarefas()
+    })
+  }
 
 }
