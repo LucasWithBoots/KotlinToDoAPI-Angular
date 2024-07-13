@@ -1,9 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
-import { CampoTarefasComponent } from './campo-tarefas/campo-tarefas.component';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
+import { HeaderComponent } from "./header/header.component";
+import { CriarTarefaComponent } from "./criar-tarefa/criar-tarefa.component";
+import { CampoTarefasComponent } from "./campo-tarefas/campo-tarefas.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { CampoTarefasComponent } from './campo-tarefas/campo-tarefas.component';
     RouterOutlet,
     HeaderComponent,
     CriarTarefaComponent,
-    CampoTarefasComponent,
+    CampoTarefasComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

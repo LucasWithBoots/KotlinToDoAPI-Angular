@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-criar-tarefa',
@@ -10,4 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CriarTarefaComponent {
   enteredTask: string = 'Escreva aqui...';
+
+  onSubmit() {
+
+  }
 }

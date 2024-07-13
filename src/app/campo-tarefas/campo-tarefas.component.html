@@ -1,7 +1,7 @@
 <section class="box-padrao-conteudo">
-  <app-tarefa></app-tarefa>
-  <app-tarefa></app-tarefa>
-  <app-tarefa></app-tarefa>
+  @for(tarefa of tarefas; track tarefa.id){
+    <app-tarefa [descricao]="tarefa.descricao"></app-tarefa>
+  }
   <div class="barra-inferior">
     <p>4 tarefas restantes</p>
     <menu>
