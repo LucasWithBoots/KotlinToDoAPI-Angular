@@ -9,8 +9,16 @@ export class TarefaService {
   public tarefas: any;
   constructor(private http: HttpClient) {}
 
-  resgatarTarefas():Observable<Tarefa[]> {
-    return this.http.get<Tarefa[]>('http://localhost:3000/tarefas');
+  resgatarTarefas(opcao?: string):Observable<Tarefa[]> {
+    if(opcao == "pendentes"){
+      return this.http.get<Tarefa[]>('http://localhost:3000/tarefas?status=PENDENTE');
+    } else if (opcao=="concluidas"){
+      return this.http.get<Tarefa[]>('http://localhost:3000/tarefas?status=CONCLUIDA');
+    } else {
+      return this.http.get<Tarefa[]>('http://localhost:3000/tarefas');
+    }
+
+
   }
 
   enviarTarefa(tarefa: TarefaDTO): Observable<Tarefa> {

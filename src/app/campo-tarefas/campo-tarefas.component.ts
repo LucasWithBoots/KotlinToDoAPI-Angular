@@ -26,8 +26,8 @@ export class CampoTarefasComponent implements OnInit {
     ).length;
   }
 
-  resgatarTarefas() {
-    this.tarefaService.resgatarTarefas().subscribe((res) => {
+  resgatarTarefas(opcao?: string) {
+    this.tarefaService.resgatarTarefas(opcao).subscribe((res) => {
       this.tarefas = res;
       this.contarTarefasRestantes();
     });
