@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TarefaService } from './tarefa.service';
-import { Tarefa } from './tarefa.model';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { TarefaService } from "./tarefa.service";
+import { Tarefa } from "./tarefa.model";
 
 @Component({
   selector: 'app-tarefa',
@@ -16,15 +16,16 @@ export class TarefaComponent {
 
   constructor(private tarefaService: TarefaService) {}
 
-  atualizarStatus(tarefa: Tarefa) {
-    this.tarefaService.atualizarTarefa(tarefa);
-
-    this.marcarStatus.emit();
-  }
-
   deletarTarefa(id: string) {
-    this.tarefaService.apagarTarefa(id);
-
-    this.deletaTarefa.emit();
+    this.tarefaService.apagarTarefa(id).subscribe(() => {
+      this.marcarStatus.emit();
+    });
   }
+
+  atualizarStatus(tarefa: Tarefa) {
+    this.tarefaService.atualizarTarefa(tarefa).subscribe(() => {
+      this.deletaTarefa.emit();
+    });
+  }
+
 }

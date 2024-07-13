@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { TarefaService } from '../shared/tarefa/tarefa.service';
+import { Component, EventEmitter, Output } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { TarefaService } from "../shared/tarefa/tarefa.service";
 
 @Component({
   selector: 'app-criar-tarefa',
@@ -20,10 +20,9 @@ export class CriarTarefaComponent {
       titulo: this.enteredTask,
       dataDeCriacao: new Date().toDateString(),
       status: 'PENDENTE',
+    }).subscribe(()=>{
+      this.postCompleto.emit();
+      this.enteredTask = '';
     });
-
-    this.postCompleto.emit();
-
-    this.enteredTask = '';
   }
 }

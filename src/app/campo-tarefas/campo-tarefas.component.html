@@ -2,8 +2,8 @@
   @if (tarefas) {
     @for (tarefa of tarefas; track tarefa.id) {
       <app-tarefa
-        (marcarStatus)="atualizar()"
-        (deletaTarefa)="atualizar()"
+        (marcarStatus)="resgatarTarefas()"
+        (deletaTarefa)="resgatarTarefas()"
         [tarefa]="tarefa"
       ></app-tarefa>
     }

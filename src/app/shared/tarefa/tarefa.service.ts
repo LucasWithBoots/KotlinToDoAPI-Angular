@@ -1,40 +1,30 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { TarefaDTO } from './tarefaDTO';
-import { Tarefa } from './tarefa.model';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { TarefaDTO } from "./tarefaDTO";
+import { Tarefa } from "./tarefa.model";
+import { Observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class TarefaService {
   public tarefas: any;
   constructor(private http: HttpClient) {}
 
-  resgatarTarefas() {
-    return this.http.get<any>('http://localhost:3000/tarefas');
+  resgatarTarefas():Observable<Tarefa[]> {
+    return this.http.get<Tarefa[]>('http://localhost:3000/tarefas');
   }
 
-  enviarTarefa(tarefa: TarefaDTO) {
-    this.http
-      .post<any>('http://localhost:3000/tarefas', tarefa)
-      .subscribe((response) => {
-        console.log(response);
-      });
+  enviarTarefa(tarefa: TarefaDTO): Observable<Tarefa> {
+    return this.http
+      .post<Tarefa>('http://localhost:3000/tarefas', tarefa);
   }
 
-  apagarTarefa(id: string) {
-    this.http.delete(`http://localhost:3000/tarefas/${id}`).subscribe(() => {
-      console.log(`Tarefa com id ${id} deletada com sucesso`);
-    });
+  apagarTarefa(id: string): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/tarefas/${id}`)
   }
 
-  atualizarTarefa(tarefa: Tarefa) {
-    let novoStatus;
-
-    if (tarefa.status == 'PENDENTE') {
-      novoStatus = 'CONCLUIDA';
-    } else {
-      novoStatus = 'PENDENTE';
-    }
-
+  atualizarTarefa(tarefa: Tarefa):Observable<Tarefa> {
+    let novoStatus = tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE"
+    
     let tarefaAtualizada: Tarefa = {
       id: tarefa.id,
       titulo: tarefa.titulo,
@@ -42,10 +32,7 @@ export class TarefaService {
       status: novoStatus,
     };
 
-    this.http
-      .put(`http://localhost:3000/tarefas/${tarefa.id}`, tarefaAtualizada)
-      .subscribe(() => {
-        console.log(`Tarefa com id ${tarefa.id} atualizada`);
-      });
+    return this.http
+      .put<Tarefa>(`http://localhost:3000/tarefas/${tarefa.id}`, tarefaAtualizada)
   }
 }
