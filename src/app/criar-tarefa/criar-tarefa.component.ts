@@ -16,6 +16,7 @@ export class CriarTarefaComponent implements OnInit {
   @Output() postCompleto = new EventEmitter();
 
   usuarios: Usuario[] = [];
+  usuarioSelecionado!: Usuario
 
   constructor(private tarefaService: TarefaService, private usuarioService: UsuarioService) {}
 
@@ -27,8 +28,7 @@ export class CriarTarefaComponent implements OnInit {
     this.tarefaService
       .enviarTarefa({
         titulo: this.enteredTask,
-        dataDeCriacao: new Date().toDateString(),
-        status: "PENDENTE",
+        idUsuario: this.usuarioSelecionado.id
       })
       .subscribe(() => {
         this.postCompleto.emit();
@@ -41,6 +41,5 @@ export class CriarTarefaComponent implements OnInit {
       this.usuarios = res
     })
   }
-
 
 }

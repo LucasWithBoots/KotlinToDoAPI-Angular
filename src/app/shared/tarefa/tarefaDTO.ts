@@ -1,5 +1,4 @@
 export interface TarefaDTO {
-  titulo: string;
-  dataDeCriacao: string;
-  status: string;
+  idUsuario: number,
+  titulo: string
 }

@@ -10,7 +10,7 @@
   </div>
   <div class="campo-usuarios">
     @for(usuario of usuarios; track usuario.id){
-      <div class="usuario">
+      <div class="usuario" (click)="usuarioSelecionado = usuario" [class.active]="usuarioSelecionado==usuario">
         {{ usuario.nome }}
       </div>
     }

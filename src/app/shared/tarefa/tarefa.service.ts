@@ -24,7 +24,7 @@ export class TarefaService {
   }
 
   enviarTarefa(tarefa: TarefaDTO): Observable<Tarefa> {
-    return this.http.post<Tarefa>("http://localhost:3000/tarefas", tarefa);
+    return this.http.post<Tarefa>("http://localhost:8080/tarefa", tarefa);
   }
 
   apagarTarefa(id: string): Observable<void> {
