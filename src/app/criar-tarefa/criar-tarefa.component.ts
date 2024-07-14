@@ -17,6 +17,7 @@ export class CriarTarefaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
   usuarioSelecionado!: Usuario
+  nomeUsuarioNovo: string = "+";
 
   constructor(private tarefaService: TarefaService, private usuarioService: UsuarioService) {}
 
@@ -42,4 +43,12 @@ export class CriarTarefaComponent implements OnInit {
     })
   }
 
+  onSubmitUser() {
+    this.usuarioService.criarUsuario({
+      nome: this.nomeUsuarioNovo,
+      email: `${this.nomeUsuarioNovo}@email.com`
+    }).subscribe(()=>{
+      this.resgatarUsuarios()
+    })
+  }
 }

@@ -14,5 +14,13 @@
         {{ usuario.nome }}
       </div>
     }
+    <div class="usuario">
+      <input
+        [(ngModel)]="nomeUsuarioNovo"
+        id="usuarioNovo"
+        name="usuarioNovo"
+        (keyup.enter)="onSubmitUser()"
+      >
+    </div>
   </div>
 </section>

@@ -32,6 +32,12 @@ img {
     background: rgba(255, 255, 255, 0.20);
     padding: .2rem .3rem;
     border-radius: .5rem;
+
+    input{
+      all: unset;
+      display: block;
+      width: fit-content;
+    }
   }
 
   .active {
