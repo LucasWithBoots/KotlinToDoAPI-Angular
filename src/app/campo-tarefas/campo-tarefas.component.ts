@@ -16,7 +16,7 @@ export class CampoTarefasComponent implements OnInit {
   tarefas: Tarefa[] = [];
   tarefasPendentes: number = 0;
 
-  paginacao!: string;
+  paginacao: string = 'todas';
 
   ngOnInit() {
     this.resgatarTarefas();

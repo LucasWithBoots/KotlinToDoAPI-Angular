@@ -19,9 +19,9 @@
   <div class="barra-inferior">
     <p>{{ tarefasPendentes }} tarefas restantes</p>
     <menu>
-      <p (click)="paginacao='todas'; resgatarTarefas()">Todas</p>
-      <p (click)="paginacao='pendentes';resgatarTarefas() ">Pendentes</p>
-      <p (click)="paginacao='concluidas';resgatarTarefas() ">Concluidas</p>
+      <p (click)="paginacao='todas'; resgatarTarefas()" [class.active]="paginacao=='todas'">Todas</p>
+      <p (click)="paginacao='pendentes';resgatarTarefas()" [class.active]="paginacao=='pendentes'">Pendentes</p>
+      <p (click)="paginacao='concluidas';resgatarTarefas()" [class.active]="paginacao=='concluidas'">Concluidas</p>
     </menu>
     <p class="remover-completas" (click)="removerTarefasProntas()">
       Remover completas
