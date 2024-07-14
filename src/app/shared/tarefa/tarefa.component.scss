@@ -3,16 +3,16 @@
   grid-template-columns: min-content 1fr min-content;
   gap: 1em;
 
-  p{
-    margin: .6rem 0;
+  p {
+    margin: 0.6rem 0;
   }
 
-  .usuario{
+  .usuario {
     display: inline-block;
-    font-size: .8rem;
-    background: rgba(255, 255, 255, 0.20);
-    padding: .2rem .3rem;
-    border-radius: .5rem;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.5rem;
   }
 
   .elipse {

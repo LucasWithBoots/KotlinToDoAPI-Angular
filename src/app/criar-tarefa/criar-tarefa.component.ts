@@ -16,20 +16,23 @@ export class CriarTarefaComponent implements OnInit {
   @Output() postCompleto = new EventEmitter();
 
   usuarios: Usuario[] = [];
-  usuarioSelecionado!: Usuario
+  usuarioSelecionado!: Usuario;
   nomeUsuarioNovo: string = "Adicionar Usuário";
 
-  constructor(private tarefaService: TarefaService, private usuarioService: UsuarioService) {}
+  constructor(
+    private tarefaService: TarefaService,
+    private usuarioService: UsuarioService,
+  ) {}
 
   ngOnInit() {
-    this.resgatarUsuarios()
+    this.resgatarUsuarios();
   }
 
   onSubmit() {
     this.tarefaService
       .enviarTarefa({
         titulo: this.enteredTask,
-        idUsuario: this.usuarioSelecionado.id
+        idUsuario: this.usuarioSelecionado.id,
       })
       .subscribe(() => {
         this.postCompleto.emit();
@@ -37,18 +40,20 @@ export class CriarTarefaComponent implements OnInit {
       });
   }
 
-  resgatarUsuarios(){
-    this.usuarioService.resgatarUsuarios().subscribe((res)=>{
-      this.usuarios = res
-    })
+  resgatarUsuarios() {
+    this.usuarioService.resgatarUsuarios().subscribe((res) => {
+      this.usuarios = res;
+    });
   }
 
   onSubmitUser() {
-    this.usuarioService.criarUsuario({
-      nome: this.nomeUsuarioNovo,
-      email: `${this.nomeUsuarioNovo}@email.com`
-    }).subscribe(()=>{
-      this.resgatarUsuarios()
-    })
+    this.usuarioService
+      .criarUsuario({
+        nome: this.nomeUsuarioNovo,
+        email: `${this.nomeUsuarioNovo}@email.com`,
+      })
+      .subscribe(() => {
+        this.resgatarUsuarios();
+      });
   }
 }

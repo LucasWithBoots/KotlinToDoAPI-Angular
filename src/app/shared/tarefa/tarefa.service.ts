@@ -5,7 +5,6 @@ import { forkJoin, Observable, switchMap } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class TarefaService {
-
   constructor(private http: HttpClient) {}
 
   resgatarTarefas(opcao?: string): Observable<Tarefa[]> {
@@ -17,7 +16,7 @@ export class TarefaService {
       return this.http.get<Tarefa[]>(
         "http://localhost:8080/tarefa?status=CONCLUIDA",
       );
-    } else if(opcao == "todas"){
+    } else if (opcao == "todas") {
       return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     } else {
       return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
@@ -33,10 +32,9 @@ export class TarefaService {
   }
 
   atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-
     let tarefaAtualizada: TarefaStatusPUT = {
       id: tarefa.id,
-      status: tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE"
+      status: tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE",
     };
 
     return this.http.put<Tarefa>(

@@ -4,7 +4,7 @@
     <div>
       <p style="text-decoration: line-through">{{ tarefa.titulo }}</p>
       <div class="usuario">
-        {{tarefa.usuario.nome}}
+        {{ tarefa.usuario.nome }}
       </div>
     </div>
   } @else if (tarefa.status == "PENDENTE") {
@@ -12,11 +12,10 @@
     <div>
       <p>{{ tarefa.titulo }}</p>
       <div class="usuario">
-        {{tarefa.usuario.nome}}
+        {{ tarefa.usuario.nome }}
       </div>
     </div>
   }
-
 
   <img src="assets/closeX.svg" alt="close" (click)="deletarTarefa(tarefa.id)" />
 </div>

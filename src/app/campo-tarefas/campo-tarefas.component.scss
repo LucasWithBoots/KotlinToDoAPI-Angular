@@ -1,4 +1,4 @@
-.box-tarefas{
+.box-tarefas {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -27,7 +27,7 @@
       }
     }
 
-    .active{
+    .active {
       color: rgba(255, 255, 255, 1);
     }
   }
