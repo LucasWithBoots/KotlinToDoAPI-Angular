@@ -13,8 +13,10 @@ import { Tarefa } from "../shared/tarefa/tarefa.model";
 export class CampoTarefasComponent implements OnInit {
   constructor(private tarefaService: TarefaService) {}
 
-  tarefas!: Tarefa[];
+  tarefas: Tarefa[] = [];
   tarefasPendentes: number = 0;
+
+  paginacao: string = "todas";
 
   ngOnInit() {
     this.resgatarTarefas();
@@ -26,8 +28,8 @@ export class CampoTarefasComponent implements OnInit {
     ).length;
   }
 
-  resgatarTarefas(opcao?: string) {
-    this.tarefaService.resgatarTarefas(opcao).subscribe((res) => {
+  resgatarTarefas() {
+    this.tarefaService.resgatarTarefas(this.paginacao).subscribe((res) => {
       this.tarefas = res;
       this.contarTarefasRestantes();
     });

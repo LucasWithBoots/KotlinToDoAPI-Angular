@@ -1,55 +1,51 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { TarefaDTO } from "./tarefaDTO";
-import { Tarefa } from "./tarefa.model";
+import { Tarefa, TarefaDTO, TarefaStatusPUT } from "./tarefa.model";
 import { forkJoin, Observable, switchMap } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class TarefaService {
-  public tarefas: any;
   constructor(private http: HttpClient) {}
 
   resgatarTarefas(opcao?: string): Observable<Tarefa[]> {
     if (opcao == "pendentes") {
       return this.http.get<Tarefa[]>(
-        "http://localhost:3000/tarefas?status=PENDENTE",
+        "http://localhost:8080/tarefa?status=PENDENTE",
       );
     } else if (opcao == "concluidas") {
       return this.http.get<Tarefa[]>(
-        "http://localhost:3000/tarefas?status=CONCLUIDA",
+        "http://localhost:8080/tarefa?status=CONCLUIDA",
       );
+    } else if (opcao == "todas") {
+      return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     } else {
-      return this.http.get<Tarefa[]>("http://localhost:3000/tarefas");
+      return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     }
   }
 
   enviarTarefa(tarefa: TarefaDTO): Observable<Tarefa> {
-    return this.http.post<Tarefa>("http://localhost:3000/tarefas", tarefa);
+    return this.http.post<Tarefa>("http://localhost:8080/tarefa", tarefa);
   }
 
-  apagarTarefa(id: string): Observable<void> {
-    return this.http.delete<void>(`http://localhost:3000/tarefas/${id}`);
+  apagarTarefa(id: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:8080/tarefa/${id}`);
   }
 
   atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    let novoStatus = tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE";
-
-    let tarefaAtualizada: Tarefa = {
+    let tarefaAtualizada: TarefaStatusPUT = {
       id: tarefa.id,
-      titulo: tarefa.titulo,
-      dataDeCriacao: tarefa.dataDeCriacao,
-      status: novoStatus,
+      status: tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE",
     };
 
     return this.http.put<Tarefa>(
-      `http://localhost:3000/tarefas/${tarefa.id}`,
+      `http://localhost:8080/tarefa/status`,
       tarefaAtualizada,
     );
   }
 
   apagarTarefasCompletas(): Observable<void[]> {
     return this.http
-      .get<Tarefa[]>("http://localhost:3000/tarefas?status=CONCLUIDA")
+      .get<Tarefa[]>("http://localhost:8080/tarefa?status=CONCLUIDA")
       .pipe(
         switchMap((tarefasConcluidas) => {
           const deleteObservables = tarefasConcluidas.map((tarefa) =>

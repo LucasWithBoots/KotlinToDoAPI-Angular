@@ -1,7 +1,9 @@
 .campo-criar-tarefa {
   margin-bottom: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 0.7rem;
 }
 
 input {
@@ -13,6 +15,33 @@ input {
 
 img {
   cursor: pointer;
+}
+
+.campo-input-seta {
+  display: flex;
+  flex-direction: row;
+}
+
+.campo-usuarios {
+  display: flex;
+  color: gray;
+  gap: 0.6rem;
+
+  .usuario {
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    input {
+      all: unset;
+    }
+  }
+
+  .active {
+    background-color: rgba(255, 255, 255, 1);
+  }
 }
 
 @media only screen and (max-width: 768px) {

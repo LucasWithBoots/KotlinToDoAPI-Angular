@@ -1,10 +1,20 @@
 <div class="container">
   @if (tarefa.status == "CONCLUIDA") {
     <div class="elipse-cheia" (click)="atualizarStatus(tarefa)"></div>
-    <p style="text-decoration: line-through">{{ tarefa.titulo }}</p>
+    <div>
+      <p style="text-decoration: line-through">{{ tarefa.titulo }}</p>
+      <div class="usuario">
+        {{ tarefa.usuario.nome }}
+      </div>
+    </div>
   } @else if (tarefa.status == "PENDENTE") {
     <div class="elipse" (click)="atualizarStatus(tarefa)"></div>
-    <p>{{ tarefa.titulo }}</p>
+    <div>
+      <p>{{ tarefa.titulo }}</p>
+      <div class="usuario">
+        {{ tarefa.usuario.nome }}
+      </div>
+    </div>
   }
 
   <img src="assets/closeX.svg" alt="close" (click)="deletarTarefa(tarefa.id)" />
