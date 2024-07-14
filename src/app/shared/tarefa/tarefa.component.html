@@ -3,8 +3,8 @@
     <div class="elipse-cheia" (click)="atualizarStatus(tarefa)"></div>
     <div>
       <p style="text-decoration: line-through">{{ tarefa.titulo }}</p>
-      <div  class="usuario">
-        Lucas Ferrari
+      <div class="usuario">
+        {{tarefa.usuario.nome}}
       </div>
     </div>
   } @else if (tarefa.status == "PENDENTE") {

@@ -17,6 +17,8 @@ export class TarefaService {
       return this.http.get<Tarefa[]>(
         "http://localhost:8080/tarefa?status=CONCLUIDA",
       );
+    } else if(opcao == "todas"){
+      return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     } else {
       return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     }

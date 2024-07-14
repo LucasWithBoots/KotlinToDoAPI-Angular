@@ -1,12 +1,17 @@
 <section class="box-padrao-conteudo">
   @if (tarefas.length != 0) {
-    @for (tarefa of tarefas; track tarefa.id) {
-      <app-tarefa
-        (marcarStatus)="resgatarTarefas()"
-        (deletaTarefa)="resgatarTarefas()"
-        [tarefa]="tarefa"
-      ></app-tarefa>
-    }
+
+    <div class="box-tarefas">
+
+      @for (tarefa of tarefas; track tarefa.id) {
+        <app-tarefa
+          (marcarStatus)="resgatarTarefas()"
+          (deletaTarefa)="resgatarTarefas()"
+          [tarefa]="tarefa"
+        ></app-tarefa>
+      }
+
+    </div>
   } @else {
     <p>Não há tarefas!</p>
   }
@@ -14,9 +19,9 @@
   <div class="barra-inferior">
     <p>{{ tarefasPendentes }} tarefas restantes</p>
     <menu>
-      <p (click)="resgatarTarefas()">Todas</p>
-      <p (click)="resgatarTarefas('pendentes')">Pendentes</p>
-      <p (click)="resgatarTarefas('concluidas')">Concluidas</p>
+      <p (click)="paginacao='todas'; resgatarTarefas()">Todas</p>
+      <p (click)="paginacao='pendentes';resgatarTarefas() ">Pendentes</p>
+      <p (click)="paginacao='concluidas';resgatarTarefas() ">Concluidas</p>
     </menu>
     <p class="remover-completas" (click)="removerTarefasProntas()">
       Remover completas

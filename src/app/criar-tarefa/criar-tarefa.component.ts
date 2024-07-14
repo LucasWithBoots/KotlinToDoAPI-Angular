@@ -17,7 +17,7 @@ export class CriarTarefaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
   usuarioSelecionado!: Usuario
-  nomeUsuarioNovo: string = "+";
+  nomeUsuarioNovo: string = "Adicionar Usuário";
 
   constructor(private tarefaService: TarefaService, private usuarioService: UsuarioService) {}
 

@@ -9,18 +9,26 @@
     <img (click)="onSubmit()" src="assets/arrow_left.svg" alt="enter" />
   </div>
   <div class="campo-usuarios">
+
     @for(usuario of usuarios; track usuario.id){
-      <div class="usuario" (click)="usuarioSelecionado = usuario" [class.active]="usuarioSelecionado==usuario">
+      <div class="usuario" (click)="usuarioSelecionado = usuario" [class.active]="usuarioSelecionado == usuario">
         {{ usuario.nome }}
       </div>
     }
-    <div class="usuario">
-      <input
-        [(ngModel)]="nomeUsuarioNovo"
-        id="usuarioNovo"
-        name="usuarioNovo"
-        (keyup.enter)="onSubmitUser()"
-      >
-    </div>
+
+<!--    <div class="usuario">-->
+<!--      <input-->
+<!--        contenteditable="true"-->
+<!--        [(ngModel)]="nomeUsuarioNovo"-->
+<!--        id="usuarioNovo"-->
+<!--        name="usuarioNovo"-->
+<!--        (keyup.enter)="onSubmitUser()"-->
+<!--      >-->
+<!--    </div>-->
   </div>
 </section>
+
+<script>
+
+</script>
+

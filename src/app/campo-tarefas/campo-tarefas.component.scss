@@ -1,3 +1,9 @@
+.box-tarefas{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .barra-inferior {
   margin-top: 2rem;
   display: flex;
