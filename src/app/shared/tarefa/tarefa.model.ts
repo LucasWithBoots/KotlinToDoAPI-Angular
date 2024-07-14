@@ -14,3 +14,9 @@ export interface TarefaStatusPUT {
   id: number,
   status: StatusTarefa
 }
+
+export interface TarefaDTO {
+  idUsuario: number,
+  titulo: string
+}
+

@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { TarefaDTO } from "./tarefaDTO";
-import { Tarefa, TarefaStatusPUT } from "./tarefa.model";
+import { Tarefa, TarefaDTO, TarefaStatusPUT } from "./tarefa.model";
 import { forkJoin, Observable, switchMap } from "rxjs";
 
 @Injectable({ providedIn: "root" })
