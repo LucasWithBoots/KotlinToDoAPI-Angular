@@ -1,5 +1,5 @@
 <section class="box-padrao-conteudo">
-  @if (tarefas) {
+  @if (tarefas.length != 0) {
     @for (tarefa of tarefas; track tarefa.id) {
       <app-tarefa
         (marcarStatus)="resgatarTarefas()"

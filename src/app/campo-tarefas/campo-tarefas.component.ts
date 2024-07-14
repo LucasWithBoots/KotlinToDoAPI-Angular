@@ -13,7 +13,7 @@ import { Tarefa } from "../shared/tarefa/tarefa.model";
 export class CampoTarefasComponent implements OnInit {
   constructor(private tarefaService: TarefaService) {}
 
-  tarefas!: Tarefa[];
+  tarefas: Tarefa[] = [];
   tarefasPendentes: number = 0;
 
   ngOnInit() {

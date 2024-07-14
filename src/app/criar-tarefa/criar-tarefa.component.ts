@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { TarefaService } from "../shared/tarefa/tarefa.service";
+import { UsuarioService } from "../shared/usuario/usuario.service";
+import { Usuario } from "../shared/usuario/usuario.model";
 
 @Component({
   selector: "app-criar-tarefa",
@@ -9,11 +11,17 @@ import { TarefaService } from "../shared/tarefa/tarefa.service";
   templateUrl: "./criar-tarefa.component.html",
   styleUrl: "./criar-tarefa.component.scss",
 })
-export class CriarTarefaComponent {
+export class CriarTarefaComponent implements OnInit {
   enteredTask: string = "Escreva aqui...";
   @Output() postCompleto = new EventEmitter();
 
-  constructor(private tarefaService: TarefaService) {}
+  usuarios: Usuario[] = [];
+
+  constructor(private tarefaService: TarefaService, private usuarioService: UsuarioService) {}
+
+  ngOnInit() {
+    this.resgatarUsuarios()
+  }
 
   onSubmit() {
     this.tarefaService
@@ -27,4 +35,12 @@ export class CriarTarefaComponent {
         this.enteredTask = "";
       });
   }
+
+  resgatarUsuarios(){
+    this.usuarioService.resgatarUsuarios().subscribe((res)=>{
+      this.usuarios = res
+    })
+  }
+
+
 }

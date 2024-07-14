@@ -1,9 +1,18 @@
 <section class="box-padrao-conteudo campo-criar-tarefa">
-  <input
-    [(ngModel)]="enteredTask"
-    id="enteredTask"
-    name="enteredTask"
-    (keyup.enter)="onSubmit()"
-  />
-  <img (click)="onSubmit()" src="assets/arrow_left.svg" alt="enter" />
+  <div class="campo-input-seta">
+    <input
+      [(ngModel)]="enteredTask"
+      id="enteredTask"
+      name="enteredTask"
+      (keyup.enter)="onSubmit()"
+    />
+    <img (click)="onSubmit()" src="assets/arrow_left.svg" alt="enter" />
+  </div>
+  <div class="campo-usuarios">
+    @for(usuario of usuarios; track usuario.id){
+      <div class="usuario">
+        {{ usuario.nome }}
+      </div>
+    }
+  </div>
 </section>
