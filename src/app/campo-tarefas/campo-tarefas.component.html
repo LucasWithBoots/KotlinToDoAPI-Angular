@@ -10,11 +10,24 @@
       }
     </div>
   } @else {
-    <p>Não há tarefas!</p>
+    @if (paginacao == "todas") {
+      <p>Não há tarefas!</p>
+    } @else if (paginacao == "pendentes") {
+      <p>Não há tarefas pendentes!</p>
+    } @else if (paginacao == "concluidas") {
+      <p>Não há tarefas concluidas!</p>
+    }
   }
 
   <div class="barra-inferior">
-    <p>{{ tarefasPendentes }} tarefas restantes</p>
+    @if (tarefasPendentes == 0) {
+      <p>Não há tarefas restantes</p>
+    } @else if (tarefasPendentes == 1) {
+      <p>1 tarefa restante</p>
+    } @else {
+      <p>{{ tarefasPendentes }} tarefas restantes</p>
+    }
+
     <menu>
       <p
         (click)="paginacao = 'todas'; resgatarTarefas()"

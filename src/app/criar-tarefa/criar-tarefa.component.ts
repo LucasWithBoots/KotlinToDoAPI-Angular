@@ -12,7 +12,7 @@ import { Usuario } from "../shared/usuario/usuario.model";
   styleUrl: "./criar-tarefa.component.scss",
 })
 export class CriarTarefaComponent implements OnInit {
-  enteredTask: string = "Escreva aqui...";
+  enteredTask!: string;
   @Output() postCompleto = new EventEmitter();
 
   usuarios: Usuario[] = [];
