@@ -29,15 +29,20 @@ export class CriarTarefaComponent implements OnInit {
   }
 
   onSubmit() {
-    this.tarefaService
-      .enviarTarefa({
-        titulo: this.enteredTask,
-        idUsuario: this.usuarioSelecionado.id,
-      })
-      .subscribe(() => {
-        this.postCompleto.emit();
-        this.enteredTask = "";
-      });
+
+    if(this.usuarioSelecionado != undefined){
+      this.tarefaService
+        .enviarTarefa({
+          titulo: this.enteredTask,
+          idUsuario: this.usuarioSelecionado.id,
+        })
+        .subscribe(() => {
+          this.postCompleto.emit();
+          this.enteredTask = "";
+        });
+    } else {
+      alert("Por favor, selecione um usuário antes de enviar a tarefa.");
+    }
   }
 
   resgatarUsuarios() {
