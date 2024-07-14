@@ -16,7 +16,7 @@ export class TarefaComponent {
 
   constructor(private tarefaService: TarefaService) {}
 
-  deletarTarefa(id: string) {
+  deletarTarefa(id: number) {
     this.tarefaService.apagarTarefa(id).subscribe(() => {
       this.marcarStatus.emit();
     });

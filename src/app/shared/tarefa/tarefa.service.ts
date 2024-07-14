@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { TarefaDTO } from "./tarefaDTO";
-import { Tarefa } from "./tarefa.model";
+import { Tarefa, TarefaStatusPUT } from "./tarefa.model";
 import { forkJoin, Observable, switchMap } from "rxjs";
 
 @Injectable({ providedIn: "root" })
@@ -18,8 +18,8 @@ export class TarefaService {
       return this.http.get<Tarefa[]>(
         "http://localhost:3000/tarefas?status=CONCLUIDA",
       );
-    } else {
-      return this.http.get<Tarefa[]>("http://localhost:3000/tarefas");
+    } else { // concertar o IF e else IF depois
+      return this.http.get<Tarefa[]>("http://localhost:8080/tarefa");
     }
   }
 
@@ -27,22 +27,19 @@ export class TarefaService {
     return this.http.post<Tarefa>("http://localhost:8080/tarefa", tarefa);
   }
 
-  apagarTarefa(id: string): Observable<void> {
+  apagarTarefa(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/tarefas/${id}`);
   }
 
   atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    let novoStatus = tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE";
 
-    let tarefaAtualizada: Tarefa = {
+    let tarefaAtualizada: TarefaStatusPUT = {
       id: tarefa.id,
-      titulo: tarefa.titulo,
-      dataDeCriacao: tarefa.dataDeCriacao,
-      status: novoStatus,
+      status: tarefa.status === "PENDENTE" ? "CONCLUIDA" : "PENDENTE"
     };
 
     return this.http.put<Tarefa>(
-      `http://localhost:3000/tarefas/${tarefa.id}`,
+      `http://localhost:8080/tarefas/status`,
       tarefaAtualizada,
     );
   }
