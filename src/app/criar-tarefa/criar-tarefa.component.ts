@@ -55,7 +55,7 @@ export class CriarTarefaComponent implements OnInit {
     this.usuarioService
       .criarUsuario({
         nome: this.nomeUsuarioNovo,
-        email: `${this.nomeUsuarioNovo}@email.com`,
+        email: `${this.nomeUsuarioNovo.replace(/\s+/g, '')}@email.com`,
       })
       .subscribe(() => {
         this.resgatarUsuarios();
