@@ -4,7 +4,7 @@ Esse é o front-end da aplicação [KotlinToDoAPI](https://github.com/LucasWithB
 
 ![Skills Usadas](https://skillicons.dev/icons?i=angular,typescript,sass,idea)
 
-![video demonstrativo](./src/assets/gravacao_tela.mp4)
+https://github.com/user-attachments/assets/3fa7b474-29a0-4d77-95d9-4f17f16eca4c
 
 ## Instalação
 
