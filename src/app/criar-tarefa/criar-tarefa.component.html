@@ -19,17 +19,15 @@
         {{ usuario.nome }}
       </div>
     }
-
-    <!--    <div class="usuario">-->
-    <!--      <input-->
-    <!--        contenteditable="true"-->
-    <!--        [(ngModel)]="nomeUsuarioNovo"-->
-    <!--        id="usuarioNovo"-->
-    <!--        name="usuarioNovo"-->
-    <!--        (keyup.enter)="onSubmitUser()"-->
-    <!--      >-->
-    <!--    </div>-->
+        <div class="usuario">
+          <input
+            contenteditable="true"
+            [(ngModel)]="nomeUsuarioNovo"
+            id="usuarioNovo"
+            name="usuarioNovo"
+            (keyup.enter)="onSubmitUser()"
+            onfocus="this.select()"
+          >
+        </div>
   </div>
 </section>
-
-<script></script>

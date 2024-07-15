@@ -24,6 +24,7 @@ img {
 
 .campo-usuarios {
   display: flex;
+  flex-wrap: wrap;
   color: gray;
   gap: 0.6rem;
 
@@ -36,6 +37,7 @@ img {
 
     input {
       all: unset;
+      cursor: text;
     }
   }
 
