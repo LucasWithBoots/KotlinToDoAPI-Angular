@@ -1,10 +1,10 @@
 # KotlinToDoAPI - Angular
 
-Esse é o front-end da aplicação [KotlinToDoAPI](https://github.com/LucasWithBoots/KotlinToDoAPI). Ambos em desenvolvimento
+Esse é o front-end da aplicação [KotlinToDoAPI](https://github.com/LucasWithBoots/KotlinToDoAPI).
 
 ![Skills Usadas](https://skillicons.dev/icons?i=angular,typescript,sass,idea)
 
-![gif do projeto](./src/assets/animacao_funcionando.gif)
+![video demonstrativo](./src/assets/gravacao_tela.mp4)
 
 ## Instalação
 
